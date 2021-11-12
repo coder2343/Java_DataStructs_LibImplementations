@@ -1,7 +1,7 @@
 package arrayimplementation;
 import java.util.AbstractCollection;
 import java.util.Iterator;
-public class ArrayList<T> {
+public class ArrayList<T, AnyType> {
 
 
 	
@@ -10,11 +10,11 @@ public class ArrayList<T> {
 		private static final int DEFAULT_CAP = 10;
 
 		private int capacity;
-		private T [] taskArr;
+		private Object [] taskArr;
 		private int index;// size
 
 		public TaskArrayList() {
-			taskArr = new T[DEFAULT_CAP];
+			taskArr = new Object [DEFAULT_CAP];
 			capacity = DEFAULT_CAP;
 			index = 0;
 		}
@@ -58,9 +58,9 @@ public class ArrayList<T> {
 
 		}
 
-		public Task removeByID(int id) {
+		public Object  removeByID(int id) {
 			int spot = getTaskByID(id);
-			Task removedItem = taskArr[spot];
+			Object removedItem = taskArr[spot];
 			for (int i = spot; i < index - 1; i++) {
 				taskArr[i] = taskArr[i + 1];
 			}
